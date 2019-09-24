@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  border: 10px solid red;
+  height: calc(100vh - 20px);
+  width: calc(100vw - 20px);
+  display: flex;
+
+  img {
+    margin: 10px;
+    height: 90px;
+    width: 150px;
+  }
+
+  .img2 {
+    align-self: center;
+  }
+}
