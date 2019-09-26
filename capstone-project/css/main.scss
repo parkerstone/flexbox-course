@@ -3,9 +3,33 @@ body {
   padding: 0;
   font-family: 'Varela Round', sans-serif;
 }
+$main-blue: rgb(11, 21, 219);
+$accent-blue: rgb(59, 133, 222);
+@mixin nav-item {
+  display: flex;
+  height: calc(100% - 20px);
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+@mixin nav-hover {
+  &:hover {
+    background-color: white;
+    cursor: pointer;
+    color: $main-blue;
+  }
+}
+@mixin link-box {
+  display: flex;
+  height: 100%;
+
+  a {
+    @include nav-item;
+    @include nav-hover;
+  }
+}
 
 nav {
-  $main-blue: rgb(59, 133, 222);
   background-color: $main-blue;
   width: 100vw;
   height: 60px;
@@ -23,33 +47,8 @@ nav {
     text-decoration: none;
     color: white;
   }
-  @mixin nav-item {
-    display: flex;
-    height: calc(100% - 20px);
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-  }
-  @mixin nav-hover {
-    &:hover {
-      background-color: white;
-      cursor: pointer;
-      color: $main-blue;
-    }
-  }
-
-  @mixin link-box {
-    display: flex;
-    height: 100%;
-
-    a {
-      @include nav-item;
-      @include nav-hover;
-    }
-  }
 
   .toggle {
-    flex: initial;
     @include link-box;
     display: none;
   }
@@ -62,6 +61,11 @@ nav {
     cursor: pointer;
   }
 
+  div {
+    display: none;
+  }
+}
+@media (min-width: 501px) {
   .links-left {
     flex: auto;
     @include link-box;
@@ -71,28 +75,51 @@ nav {
     flex: initial;
     @include link-box;
   }
-
-  @media (max-width: 500px) {
+}
+@media (max-width: 500px) {
+  nav {
     .toggle {
-      display: flex;
+      @include nav-item;
+      @include nav-hover;
+      float: left;
     }
 
     .branding {
       flex: auto;
-      text-align: left;
+      justify-content: flex-start;
+    }
+  }
+
+  .active {
+    display: block;
+    height: 100%;
+
+    a {
+      height: 40px;
     }
 
-    .links-left {
-      display: none;
+    .toggle {
+      background-color: $accent-blue;
     }
 
-    .links-right {
-      display: none;
+    .branding {
+      padding-left: 20px;
     }
 
-    .active div {
+    div {
       display: block;
-    }
+      background-color: $accent-blue;
 
+      a {
+        @include nav-item;
+        display: block;
+        text-align: center;
+        &:hover {
+          background-color: white;
+          cursor: pointer;
+          color: $accent-blue;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Toggle</title>
+</head>
+
+<style>
+
+    #clicky:hover {
+        cursor: pointer;
+    }
+
+    @media (min-width: 48em) {
+        /* stuff for when screen is large */
+
+        #clicky {
+            display: none;
+        }
+
+        .element-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+    @media (max-width: 48em) {
+        /* stuff for when screen is small */
+        .element-container.active .element {
+            display: block;
+        }
+
+        .element {
+            display: none;
+        }
+    }
+
+</style>
+
+<body>
+    <div class="element-container">
+        <!-- Clicky only appears in small view -->
+        <button id="clicky" class="button">
+            Click Me
+        </button>
+        <div class="element">
+            element 1
+        </div>
+        <div class="element">
+            element 2
+        </div>
+        <div class="element">
+            element 3
+        </div>
+    </div>
+
+</body>
+<script>
+    const clickyClick = document.getElementById('clicky');
+    clickyClick.addEventListener('click', event => {
+        // will toggle to add "active" class to element-container
+        clickyClick.parentElement.classList.toggle('active');
+    })
+</script>
+</html>

@@ -5,7 +5,7 @@ body {
 }
 
 nav {
-  background-color: #3b85de;
+  background-color: #0b15db;
   width: 100vw;
   height: 60px;
   display: flex;
@@ -22,7 +22,6 @@ nav a {
   color: white;
 }
 nav .toggle {
-  flex: initial;
   display: flex;
   height: 100%;
   display: none;
@@ -37,7 +36,7 @@ nav .toggle a {
 nav .toggle a:hover {
   background-color: white;
   cursor: pointer;
-  color: #3b85de;
+  color: #0b15db;
 }
 nav .branding {
   display: flex;
@@ -50,56 +49,96 @@ nav .branding {
   flex: initial;
   cursor: pointer;
 }
-nav .links-left {
-  flex: auto;
-  display: flex;
-  height: 100%;
+nav div {
+  display: none;
 }
-nav .links-left a {
-  display: flex;
-  height: calc(100% - 20px);
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-nav .links-left a:hover {
-  background-color: white;
-  cursor: pointer;
-  color: #3b85de;
-}
-nav .links-right {
-  flex: initial;
-  display: flex;
-  height: 100%;
-}
-nav .links-right a {
-  display: flex;
-  height: calc(100% - 20px);
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-nav .links-right a:hover {
-  background-color: white;
-  cursor: pointer;
-  color: #3b85de;
+
+@media (min-width: 501px) {
+  .links-left {
+    flex: auto;
+    display: flex;
+    height: 100%;
+  }
+  .links-left a {
+    display: flex;
+    height: calc(100% - 20px);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .links-left a:hover {
+    background-color: white;
+    cursor: pointer;
+    color: #0b15db;
+  }
+
+  .links-right {
+    flex: initial;
+    display: flex;
+    height: 100%;
+  }
+  .links-right a {
+    display: flex;
+    height: calc(100% - 20px);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .links-right a:hover {
+    background-color: white;
+    cursor: pointer;
+    color: #0b15db;
+  }
 }
 @media (max-width: 500px) {
   nav .toggle {
     display: flex;
+    height: calc(100% - 20px);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    float: left;
+  }
+  nav .toggle:hover {
+    background-color: white;
+    cursor: pointer;
+    color: #0b15db;
   }
   nav .branding {
     flex: auto;
-    text-align: left;
+    justify-content: flex-start;
   }
-  nav .links-left {
-    display: none;
-  }
-  nav .links-right {
-    display: none;
-  }
-  nav .active div {
+
+  .active {
     display: block;
+    height: 100%;
+  }
+  .active a {
+    height: 40px;
+  }
+  .active .toggle {
+    background-color: #3b85de;
+  }
+  .active .branding {
+    padding-left: 20px;
+  }
+  .active div {
+    display: block;
+    background-color: #3b85de;
+  }
+  .active div a {
+    display: flex;
+    height: calc(100% - 20px);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    display: block;
+    text-align: center;
+  }
+  .active div a:hover {
+    background-color: white;
+    cursor: pointer;
+    color: #3b85de;
   }
 }
 

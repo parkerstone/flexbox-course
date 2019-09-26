@@ -8,17 +8,12 @@
   <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/79c294c376.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/main.css">
-  <script src="script.js" charset="utf-8"></script>
 </head>
 
 <body>
   <nav>
-    <div class="toggle">
-      <a href="#" id="nav-hamburger"><i class="fas fa-bars"></i></a>
-    </div>
-    <div class="branding">
-      <a href="#">Parker Stone</a>
-    </div>
+    <a href="#" class="toggle" id="nav-hamburger"><i class="fas fa-bars"></i></a>
+    <a href="#" class="branding">Parker Stone</a>
     <div class="links-left">
       <a href="#">Link 1</a>
       <a href="#">Link 2</a>
@@ -29,6 +24,13 @@
     </div>
   </nav>
   <h1>Hello!</h1>
+  <script type="text/javascript" src="navbar.js"></script>
+  <!-- <script type="text/javascript">
+    const navHamburger = document.querySelector('#nav-hamburger');
+    navHamburger.addEventListener('click', (e) => {
+      navHamburger.parentElement.classList.toggle('active');
+    })
+  </script> -->
 </body>
 
 </html>
