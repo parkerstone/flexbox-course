@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Varela Round", sans-serif;
+}
+
+nav {
+  background-color: #3b85de;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  transition: 0.25s;
+}
+nav:hover {
+  box-shadow: 0 10px 30px 10px rgba(59, 133, 222, 0.5);
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+nav .toggle {
+  flex: initial;
+  display: flex;
+  height: 100%;
+  display: none;
+}
+nav .toggle a {
+  display: flex;
+  height: calc(100% - 20px);
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+nav .toggle a:hover {
+  background-color: white;
+  cursor: pointer;
+  color: #3b85de;
+}
+nav .branding {
+  display: flex;
+  height: calc(100% - 20px);
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+  flex: initial;
+  cursor: pointer;
+}
+nav .links-left {
+  flex: auto;
+  display: flex;
+  height: 100%;
+}
+nav .links-left a {
+  display: flex;
+  height: calc(100% - 20px);
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+nav .links-left a:hover {
+  background-color: white;
+  cursor: pointer;
+  color: #3b85de;
+}
+nav .links-right {
+  flex: initial;
+  display: flex;
+  height: 100%;
+}
+nav .links-right a {
+  display: flex;
+  height: calc(100% - 20px);
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+nav .links-right a:hover {
+  background-color: white;
+  cursor: pointer;
+  color: #3b85de;
+}
+@media (max-width: 500px) {
+  nav .toggle {
+    display: flex;
+  }
+  nav .branding {
+    flex: auto;
+    text-align: left;
+  }
+  nav .links-left {
+    display: none;
+  }
+  nav .links-right {
+    display: none;
+  }
+  nav .active div {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Varela Round', sans-serif;
+}
+
+nav {
+  $main-blue: rgb(59, 133, 222);
+  background-color: $main-blue;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  transition: 0.25s;
+
+  &:hover {
+    box-shadow: 0 10px 30px 10px rgba(59, 133, 222, 0.5);
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  @mixin nav-item {
+    display: flex;
+    height: calc(100% - 20px);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  @mixin nav-hover {
+    &:hover {
+      background-color: white;
+      cursor: pointer;
+      color: $main-blue;
+    }
+  }
+
+  @mixin link-box {
+    display: flex;
+    height: 100%;
+
+    a {
+      @include nav-item;
+      @include nav-hover;
+    }
+  }
+
+  .toggle {
+    flex: initial;
+    @include link-box;
+    display: none;
+  }
+
+  .branding {
+    @include nav-item;
+    margin-left: 10px;
+    margin-right: 20px;
+    flex: initial;
+    cursor: pointer;
+  }
+
+  .links-left {
+    flex: auto;
+    @include link-box;
+  }
+
+  .links-right {
+    flex: initial;
+    @include link-box;
+  }
+
+  @media (max-width: 500px) {
+    .toggle {
+      display: flex;
+    }
+
+    .branding {
+      flex: auto;
+      text-align: left;
+    }
+
+    .links-left {
+      display: none;
+    }
+
+    .links-right {
+      display: none;
+    }
+
+    .active div {
+      display: block;
+    }
+
+  }
+}
