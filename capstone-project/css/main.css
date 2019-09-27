@@ -91,6 +91,9 @@ nav div {
   }
 }
 @media (max-width: 500px) {
+  nav {
+    transition: 0s;
+  }
   nav .toggle {
     display: flex;
     height: calc(100% - 20px);

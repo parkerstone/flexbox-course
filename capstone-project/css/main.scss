@@ -78,6 +78,8 @@ nav {
 }
 @media (max-width: 500px) {
   nav {
+    transition: 0s;
+
     .toggle {
       @include nav-item;
       @include nav-hover;
@@ -114,6 +116,7 @@ nav {
         @include nav-item;
         display: block;
         text-align: center;
+
         &:hover {
           background-color: white;
           cursor: pointer;
